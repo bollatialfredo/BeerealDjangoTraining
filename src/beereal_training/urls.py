@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from shortener.views import BeerealCBV, beereal_training_redirect_view
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^view-cbv/$', BeerealCBV.as_view()),
+    url(r'^view-fbv/$', beereal_training_redirect_view),
 ]
